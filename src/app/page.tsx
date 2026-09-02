@@ -41,48 +41,44 @@ export default function Home() {
     <>
       <HeroSection />
 
-      {/* Promotional banner */}
-      <section className="py-8">
-        <div className="container-app">
-          <Reveal className="overflow-hidden rounded-2xl shadow-sm">
+      {/* About preview */}
+      <section className="section">
+        <div className="container-app grid items-center gap-12 lg:grid-cols-2">
+          <Reveal className="order-2 overflow-hidden rounded-2xl shadow-sm">
             <Image
               src="/Images/hero-banner.png"
               alt="Good Will Nutrition and Wellness Centre — Better Nutrition, Better Life"
               width={1730}
               height={922}
               className="w-full"
-              sizes="(min-width: 1280px) 1200px, 100vw"
+              sizes="(min-width: 1024px) 560px, 100vw"
             />
           </Reveal>
+          <Reveal delay={0.1} className="text-center lg:text-left">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent-600">
+              About Us
+            </span>
+            <h2 className="mt-2 text-3xl font-bold text-brand-900 sm:text-4xl">
+              Genuine care, backed by science
+            </h2>
+            <p className="mt-4 leading-relaxed text-neutral-600">
+              At Good Will Nutrition and Wellness Centre, we believe good health should feel
+              achievable — not overwhelming. We combine evidence-based nutrition science with
+              a deep understanding of everyday Indian lifestyles to create plans that actually
+              work, and actually last.
+            </p>
+            <p className="mt-4 leading-relaxed text-neutral-600">
+              From weight management to lifestyle coaching, our team walks with you at every
+              step, so you never feel alone on your journey to better health.
+            </p>
+            <Link
+              href="/about"
+              className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 transition-transform hover:translate-x-0.5 hover:text-brand-800"
+            >
+              Learn more about us →
+            </Link>
+          </Reveal>
         </div>
-      </section>
-
-      {/* About preview */}
-      <section className="section">
-        <Reveal className="container-app mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-accent-600">
-            About Us
-          </span>
-          <h2 className="mt-2 text-3xl font-bold text-brand-900 sm:text-4xl">
-            Genuine care, backed by science
-          </h2>
-          <p className="mt-4 leading-relaxed text-neutral-600">
-            At Good Will Nutrition and Wellness Centre, we believe good health should feel
-            achievable — not overwhelming. We combine evidence-based nutrition science with
-            a deep understanding of everyday Indian lifestyles to create plans that actually
-            work, and actually last.
-          </p>
-          <p className="mt-4 leading-relaxed text-neutral-600">
-            From weight management to lifestyle coaching, our team walks with you at every
-            step, so you never feel alone on your journey to better health.
-          </p>
-          <Link
-            href="/about"
-            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 transition-transform hover:translate-x-0.5 hover:text-brand-800"
-          >
-            Learn more about us →
-          </Link>
-        </Reveal>
       </section>
 
       {/* Services highlights */}
@@ -115,16 +111,28 @@ export default function Home() {
               description="Here's what makes our approach different."
             />
           </Reveal>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((b, i) => (
-              <Reveal key={b.title} delay={i * 0.08} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-brand-700 transition-transform hover:scale-110">
-                  <b.icon className="h-7 w-7" />
-                </div>
-                <h3 className="mt-4 text-base font-semibold text-brand-900">{b.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-600">{b.description}</p>
-              </Reveal>
-            ))}
+          <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+            <Reveal className="overflow-hidden rounded-2xl shadow-sm">
+              <Image
+                src="/Images/healthy-food-healthy-life.png"
+                alt="Healthy Food, Healthy Life — eat right, feel light, live bright"
+                width={1254}
+                height={1254}
+                className="w-full"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
+            </Reveal>
+            <div className="grid gap-8 sm:grid-cols-2">
+              {benefits.map((b, i) => (
+                <Reveal key={b.title} delay={i * 0.08} className="text-center">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-brand-700 transition-transform hover:scale-110">
+                    <b.icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-brand-900">{b.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-600">{b.description}</p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
