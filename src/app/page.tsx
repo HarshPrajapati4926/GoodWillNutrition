@@ -130,10 +130,22 @@ export default function Home() {
             title="What Our Clients Say"
             description="Real people, real transformations."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name} testimonial={t} />
-            ))}
+          <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="overflow-hidden rounded-2xl shadow-sm">
+              <Image
+                src="/Images/transformation.png"
+                alt="Sample transformation results with the right guidance, balanced nutrition, and consistent effort"
+                width={1254}
+                height={1254}
+                className="w-full"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+              {testimonials.map((t) => (
+                <TestimonialCard key={t.name} testimonial={t} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
