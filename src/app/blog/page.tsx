@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import { blogPosts } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -27,27 +28,31 @@ export default function BlogPage() {
 
       <section className="section">
         <div className="container-app grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group flex flex-col rounded-2xl border border-brand-100 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-            >
-              <span className="text-xs font-medium text-neutral-400">
-                {new Date(post.date).toLocaleDateString("en-IN", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </span>
-              <h2 className="mt-2 text-lg font-semibold text-brand-900 group-hover:text-brand-700">
-                {post.title}
-              </h2>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
-                {post.excerpt}
-              </p>
-              <span className="mt-4 text-sm font-semibold text-brand-700">Read more →</span>
-            </Link>
+          {blogPosts.map((post, i) => (
+            <Reveal key={post.slug} delay={i * 0.08}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group flex h-full flex-col rounded-2xl border border-brand-100 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              >
+                <span className="text-xs font-medium text-neutral-400">
+                  {new Date(post.date).toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </span>
+                <h2 className="mt-2 text-lg font-semibold text-brand-900 group-hover:text-brand-700">
+                  {post.title}
+                </h2>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
+                  {post.excerpt}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+                  Read more
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>

@@ -10,6 +10,7 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import Reveal from "@/components/Reveal";
 import { services, testimonials } from "@/lib/data";
 
 const benefits = [
@@ -43,7 +44,7 @@ export default function Home() {
       {/* Promotional banner */}
       <section className="py-8">
         <div className="container-app">
-          <div className="overflow-hidden rounded-2xl shadow-sm">
+          <Reveal className="overflow-hidden rounded-2xl shadow-sm">
             <Image
               src="/Images/hero-banner.png"
               alt="Good Will Nutrition and Wellness Centre — Better Nutrition, Better Life"
@@ -52,13 +53,13 @@ export default function Home() {
               className="w-full"
               sizes="(min-width: 1280px) 1200px, 100vw"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* About preview */}
       <section className="section">
-        <div className="container-app mx-auto max-w-2xl text-center">
+        <Reveal className="container-app mx-auto max-w-2xl text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-accent-600">
             About Us
           </span>
@@ -77,24 +78,28 @@ export default function Home() {
           </p>
           <Link
             href="/about"
-            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 transition-transform hover:translate-x-0.5 hover:text-brand-800"
           >
             Learn more about us →
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* Services highlights */}
       <section className="section bg-brand-50/50">
         <div className="container-app">
-          <SectionHeading
-            eyebrow="What We Offer"
-            title="Our Core Services"
-            description="Comprehensive nutrition and wellness programs designed around your unique goals."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="What We Offer"
+              title="Our Core Services"
+              description="Comprehensive nutrition and wellness programs designed around your unique goals."
+            />
+          </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+            {services.map((service, i) => (
+              <Reveal key={service.slug} delay={i * 0.08}>
+                <ServiceCard service={service} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -103,20 +108,22 @@ export default function Home() {
       {/* Benefits */}
       <section className="section">
         <div className="container-app">
-          <SectionHeading
-            eyebrow="Why Choose Us"
-            title="Health You Can Trust"
-            description="Here's what makes our approach different."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Why Choose Us"
+              title="Health You Can Trust"
+              description="Here's what makes our approach different."
+            />
+          </Reveal>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((b) => (
-              <div key={b.title} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+            {benefits.map((b, i) => (
+              <Reveal key={b.title} delay={i * 0.08} className="text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-brand-700 transition-transform hover:scale-110">
                   <b.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-brand-900">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">{b.description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -125,13 +132,15 @@ export default function Home() {
       {/* Testimonials */}
       <section className="section bg-brand-50/50">
         <div className="container-app">
-          <SectionHeading
-            eyebrow="Success Stories"
-            title="What Our Clients Say"
-            description="Real people, real transformations."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Success Stories"
+              title="What Our Clients Say"
+              description="Real people, real transformations."
+            />
+          </Reveal>
           <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="overflow-hidden rounded-2xl shadow-sm">
+            <Reveal className="overflow-hidden rounded-2xl shadow-sm">
               <Image
                 src="/Images/transformation.png"
                 alt="Sample transformation results with the right guidance, balanced nutrition, and consistent effort"
@@ -140,10 +149,12 @@ export default function Home() {
                 className="w-full"
                 sizes="(min-width: 1024px) 560px, 100vw"
               />
-            </div>
+            </Reveal>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {testimonials.map((t) => (
-                <TestimonialCard key={t.name} testimonial={t} />
+              {testimonials.map((t, i) => (
+                <Reveal key={t.name} delay={i * 0.08}>
+                  <TestimonialCard testimonial={t} />
+                </Reveal>
               ))}
             </div>
           </div>
@@ -153,7 +164,7 @@ export default function Home() {
       {/* Contact CTA */}
       <section className="section">
         <div className="container-app">
-          <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-brand-700 px-8 py-12 text-center sm:flex-row sm:text-left">
+          <Reveal className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-brand-700 px-8 py-12 text-center sm:flex-row sm:text-left">
             <div>
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
                 Ready to start your health journey?
@@ -164,11 +175,11 @@ export default function Home() {
             </div>
             <Link
               href="/contact"
-              className="shrink-0 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-800 shadow-md transition-colors hover:bg-brand-50"
+              className="shrink-0 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-800 shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-50 hover:shadow-lg"
             >
               Book Consultation
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

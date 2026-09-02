@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/data";
 
 const links = [
@@ -15,9 +15,21 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-100 bg-white/95 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur transition-shadow duration-300 ${
+        scrolled ? "border-brand-100 shadow-sm" : "border-transparent"
+      }`}
+    >
       <div className="container-app flex h-16 items-center justify-between gap-2 py-2 sm:h-18">
         <Link
           href="/"

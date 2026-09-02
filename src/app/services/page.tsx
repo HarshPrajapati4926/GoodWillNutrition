@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PiCheckCircleDuotone } from "react-icons/pi";
 import { services, siteConfig } from "@/lib/data";
 import ServiceIcon from "@/components/ServiceIcon";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -31,9 +32,10 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container-app space-y-16">
           {services.map((service, i) => (
-            <div
+            <Reveal
               key={service.slug}
               id={service.slug}
+              y={32}
               className={`grid scroll-mt-24 items-center gap-10 lg:grid-cols-2 ${
                 i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
               }`}
@@ -59,7 +61,7 @@ export default function ServicesPage() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
                     href="/contact"
-                    className="rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-800"
+                    className="rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md"
                   >
                     Book Consultation
                   </Link>
@@ -69,7 +71,7 @@ export default function ServicesPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border-2 border-brand-700 px-6 py-3 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-50"
+                    className="rounded-full border-2 border-brand-700 px-6 py-3 text-sm font-semibold text-brand-700 transition-all hover:-translate-y-0.5 hover:bg-brand-50"
                   >
                     Ask on WhatsApp
                   </a>
@@ -81,7 +83,7 @@ export default function ServicesPage() {
                   <ServiceIcon icon={service.icon} className="h-32 w-32 text-brand-300" />
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>

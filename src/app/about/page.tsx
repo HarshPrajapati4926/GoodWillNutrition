@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -53,14 +54,16 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container-app grid items-center gap-12 lg:grid-cols-2">
-          <Image
-            src="/logo.png"
-            alt={siteConfig.name}
-            width={420}
-            height={420}
-            className="mx-auto w-full max-w-sm"
-          />
-          <div className="space-y-8">
+          <Reveal>
+            <Image
+              src="/logo.png"
+              alt={siteConfig.name}
+              width={420}
+              height={420}
+              className="mx-auto w-full max-w-sm"
+            />
+          </Reveal>
+          <Reveal delay={0.1} className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-brand-900">Our Mission</h2>
               <p className="mt-2 leading-relaxed text-neutral-600">
@@ -77,23 +80,29 @@ export default function AboutPage() {
                 clients&apos; well-being.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="section bg-brand-50/50">
         <div className="container-app">
-          <SectionHeading
-            eyebrow="Why Trust Us"
-            title="Our Core Values"
-            description="The principles that guide everything we do."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Why Trust Us"
+              title="Our Core Values"
+              description="The principles that guide everything we do."
+            />
+          </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((v) => (
-              <div key={v.title} className="rounded-2xl border border-brand-100 bg-white p-6">
+            {values.map((v, i) => (
+              <Reveal
+                key={v.title}
+                delay={i * 0.08}
+                className="rounded-2xl border border-brand-100 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-md"
+              >
                 <h3 className="text-base font-semibold text-brand-900">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">{v.description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -101,7 +110,7 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container-app">
-          <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-brand-700 px-8 py-12 text-center sm:flex-row sm:text-left">
+          <Reveal className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-brand-700 px-8 py-12 text-center sm:flex-row sm:text-left">
             <div>
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
                 Let&apos;s work towards your best health
@@ -112,11 +121,11 @@ export default function AboutPage() {
             </div>
             <Link
               href="/contact"
-              className="shrink-0 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-800 shadow-md transition-colors hover:bg-brand-50"
+              className="shrink-0 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-800 shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-50 hover:shadow-lg"
             >
               Book Consultation
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

@@ -38,7 +38,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
               <PiPhoneDuotone className="h-8 w-8 shrink-0 text-brand-700" />
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
                   Phone
                 </h3>
@@ -52,7 +52,7 @@ export default function ContactPage() {
             </div>
             <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
               <PiWhatsappLogoDuotone className="h-8 w-8 shrink-0 text-brand-700" />
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
                   WhatsApp
                 </h3>
@@ -68,18 +68,18 @@ export default function ContactPage() {
             </div>
             <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
               <PiEnvelopeDuotone className="h-8 w-8 shrink-0 text-brand-700" />
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
                   Email
                 </h3>
-                <a href={`mailto:${siteConfig.email}`} className="mt-1 block text-lg font-semibold text-brand-900 hover:text-brand-700">
+                <a href={`mailto:${siteConfig.email}`} className="mt-1 block wrap-break-word text-lg font-semibold text-brand-900 hover:text-brand-700">
                   {siteConfig.email}
                 </a>
               </div>
             </div>
             <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
               <PiMapPinDuotone className="h-8 w-8 shrink-0 text-brand-700" />
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
                   Address
                 </h3>
@@ -88,7 +88,7 @@ export default function ContactPage() {
             </div>
             <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
               <PiClockDuotone className="h-8 w-8 shrink-0 text-brand-700" />
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
                   Timing
                 </h3>
@@ -111,13 +111,11 @@ export default function ContactPage() {
 
       <section className="pb-20">
         <div className="container-app">
-          <div className="overflow-hidden rounded-2xl border border-brand-100">
+          <div className="aspect-4/3 w-full overflow-hidden rounded-2xl border border-brand-100 sm:aspect-video">
             <iframe
               title="Good Will Nutrition and Wellness Centre Location"
               src={siteConfig.mapsEmbedUrl}
-              width="100%"
-              height="380"
-              style={{ border: 0 }}
+              className="h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

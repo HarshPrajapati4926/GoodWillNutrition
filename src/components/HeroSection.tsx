@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PiPhoneDuotone } from "react-icons/pi";
 import { siteConfig } from "@/lib/data";
@@ -6,8 +5,8 @@ import { siteConfig } from "@/lib/data";
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-linear-to-b from-brand-50 to-white">
-      <div className="container-app grid items-center gap-10 py-8 sm:py-20 lg:grid-cols-2 lg:py-28">
-        <div>
+      <div className="container-app py-8 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold text-brand-800">
             Nutrition &amp; Wellness Centre in {siteConfig.city}
           </span>
@@ -16,13 +15,13 @@ export default function HeroSection() {
             {siteConfig.tagline}
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-neutral-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-neutral-600 sm:text-lg">
             Expert-guided diet consultation, weight loss &amp; weight gain programs, and
             wellness coaching — built around real Indian lifestyles, delivered with genuine
             care.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
               className="rounded-full bg-brand-700 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-brand-800"
@@ -38,7 +37,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-8">
+          <div className="mt-10 flex flex-wrap justify-center gap-8">
             <div>
               <p className="text-2xl font-extrabold text-brand-800">1000+</p>
               <p className="text-xs font-medium text-neutral-500">Lives Transformed</p>
@@ -52,18 +51,6 @@ export default function HeroSection() {
               <p className="text-xs font-medium text-neutral-500">Personalised Plans</p>
             </div>
           </div>
-        </div>
-
-        <div className="relative mx-auto flex w-full max-w-md items-center justify-center">
-          <div className="absolute inset-0 -z-10 rounded-full bg-brand-100/70 blur-3xl" />
-          <Image
-            src="/logo.png"
-            alt={siteConfig.name}
-            width={420}
-            height={420}
-            priority
-            className="w-full max-w-sm drop-shadow-xl"
-          />
         </div>
       </div>
     </section>
