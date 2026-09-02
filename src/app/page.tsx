@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   PiCompassDuotone,
   PiGraduationCapDuotone,
@@ -38,6 +39,22 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+
+      {/* Promotional banner */}
+      <section className="py-8">
+        <div className="container-app">
+          <div className="overflow-hidden rounded-2xl shadow-sm">
+            <Image
+              src="/Images/hero-banner.png"
+              alt="Good Will Nutrition and Wellness Centre — Better Nutrition, Better Life"
+              width={1730}
+              height={922}
+              className="w-full"
+              sizes="(min-width: 1280px) 1200px, 100vw"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* About preview */}
       <section className="section">
