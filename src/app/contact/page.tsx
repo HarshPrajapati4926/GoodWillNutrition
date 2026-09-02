@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import {
+  PiClockDuotone,
+  PiEnvelopeDuotone,
+  PiMapPinDuotone,
+  PiPhoneDuotone,
+  PiWhatsappLogoDuotone,
+} from "react-icons/pi";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/lib/data";
 
@@ -29,40 +36,64 @@ export default function ContactPage() {
       <section className="section">
         <div className="container-app grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2 space-y-6">
-            <div className="rounded-2xl border border-brand-100 bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-                Phone
-              </h3>
-              <a href={`tel:${siteConfig.phone}`} className="mt-2 block text-lg font-semibold text-brand-900 hover:text-brand-700">
-                {siteConfig.phoneDisplay}
-              </a>
+            <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
+              <PiPhoneDuotone className="h-8 w-8 shrink-0 text-brand-700" />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                  Phone
+                </h3>
+                <a href={`tel:${siteConfig.phone}`} className="mt-1 block text-lg font-semibold text-brand-900 hover:text-brand-700">
+                  {siteConfig.phoneDisplay}
+                </a>
+                <a href={`tel:${siteConfig.altPhone}`} className="block text-lg font-semibold text-brand-900 hover:text-brand-700">
+                  {siteConfig.altPhoneDisplay}
+                </a>
+              </div>
             </div>
-            <div className="rounded-2xl border border-brand-100 bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-                WhatsApp
-              </h3>
-              <a
-                href={`https://wa.me/${siteConfig.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block text-lg font-semibold text-brand-900 hover:text-brand-700"
-              >
-                Chat with us
-              </a>
+            <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
+              <PiWhatsappLogoDuotone className="h-8 w-8 shrink-0 text-brand-700" />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                  WhatsApp
+                </h3>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 block text-lg font-semibold text-brand-900 hover:text-brand-700"
+                >
+                  Chat with us
+                </a>
+              </div>
             </div>
-            <div className="rounded-2xl border border-brand-100 bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-                Email
-              </h3>
-              <a href={`mailto:${siteConfig.email}`} className="mt-2 block text-lg font-semibold text-brand-900 hover:text-brand-700">
-                {siteConfig.email}
-              </a>
+            <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
+              <PiEnvelopeDuotone className="h-8 w-8 shrink-0 text-brand-700" />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                  Email
+                </h3>
+                <a href={`mailto:${siteConfig.email}`} className="mt-1 block text-lg font-semibold text-brand-900 hover:text-brand-700">
+                  {siteConfig.email}
+                </a>
+              </div>
             </div>
-            <div className="rounded-2xl border border-brand-100 bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-                Address
-              </h3>
-              <p className="mt-2 text-neutral-700">{siteConfig.address}</p>
+            <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
+              <PiMapPinDuotone className="h-8 w-8 shrink-0 text-brand-700" />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                  Address
+                </h3>
+                <p className="mt-1 text-neutral-700">{siteConfig.address}</p>
+              </div>
+            </div>
+            <div className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
+              <PiClockDuotone className="h-8 w-8 shrink-0 text-brand-700" />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                  Timing
+                </h3>
+                <p className="mt-1 text-neutral-700">{siteConfig.hours}</p>
+              </div>
             </div>
           </div>
 

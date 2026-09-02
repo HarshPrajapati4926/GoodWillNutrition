@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PiClockDuotone, PiEnvelopeDuotone, PiMapPinDuotone, PiPhoneDuotone } from "react-icons/pi";
 import { services, siteConfig } from "@/lib/data";
 
 export default function Footer() {
@@ -56,16 +57,29 @@ export default function Footer() {
           </h3>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              <a href={`tel:${siteConfig.phone}`} className="hover:text-white">
-                📞 {siteConfig.phoneDisplay}
+              <a href={`tel:${siteConfig.phone}`} className="flex items-start gap-2 hover:text-white">
+                <PiPhoneDuotone className="mt-0.5 h-5 w-5 shrink-0 text-brand-400" />
+                <span>
+                  {siteConfig.phoneDisplay}
+                  <br />
+                  {siteConfig.altPhoneDisplay}
+                </span>
               </a>
             </li>
             <li>
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
-                ✉️ {siteConfig.email}
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-white">
+                <PiEnvelopeDuotone className="h-5 w-5 shrink-0 text-brand-400" />
+                {siteConfig.email}
               </a>
             </li>
-            <li className="text-brand-200">📍 {siteConfig.address}</li>
+            <li className="flex items-start gap-2 text-brand-200">
+              <PiMapPinDuotone className="mt-0.5 h-5 w-5 shrink-0 text-brand-400" />
+              {siteConfig.address}
+            </li>
+            <li className="flex items-center gap-2 text-brand-200">
+              <PiClockDuotone className="h-5 w-5 shrink-0 text-brand-400" />
+              {siteConfig.hours}
+            </li>
           </ul>
         </div>
       </div>

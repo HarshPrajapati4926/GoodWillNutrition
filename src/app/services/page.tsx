@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PiCheckCircleDuotone } from "react-icons/pi";
 import { services, siteConfig } from "@/lib/data";
 import ServiceIcon from "@/components/ServiceIcon";
 
@@ -49,7 +50,7 @@ export default function ServicesPage() {
                 <ul className="mt-5 space-y-2">
                   {service.benefits.map((b) => (
                     <li key={b} className="flex items-start gap-2 text-sm text-neutral-700">
-                      <span className="mt-0.5 text-brand-600">✔</span>
+                      <PiCheckCircleDuotone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
                       {b}
                     </li>
                   ))}

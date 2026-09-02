@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PiPhoneDuotone } from "react-icons/pi";
 import { siteConfig } from "@/lib/data";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 to-white">
       <div className="container-app grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div>
           <span className="inline-flex items-center rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold text-brand-800">
@@ -30,9 +31,10 @@ export default function HeroSection() {
             </Link>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="rounded-full border-2 border-brand-700 px-7 py-3.5 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-50"
+              className="flex items-center gap-2 rounded-full border-2 border-brand-700 px-7 py-3.5 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-50"
             >
-              📞 Call Us Now
+              <PiPhoneDuotone className="h-5 w-5" />
+              Call Us Now
             </a>
           </div>
 

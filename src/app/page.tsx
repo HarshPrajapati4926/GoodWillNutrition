@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import {
+  PiCompassDuotone,
+  PiGraduationCapDuotone,
+  PiHandHeartDuotone,
+  PiHeartDuotone,
+} from "react-icons/pi";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -10,22 +16,22 @@ const benefits = [
   {
     title: "Certified Nutrition Experts",
     description: "Guidance from qualified nutritionists who understand real Indian diets.",
-    icon: "🎓",
+    icon: PiGraduationCapDuotone,
   },
   {
     title: "100% Personalised Plans",
     description: "No generic diet charts — every plan is built around your body and goals.",
-    icon: "🧭",
+    icon: PiCompassDuotone,
   },
   {
     title: "Continuous Support",
     description: "Regular follow-ups and WhatsApp support to keep you on track.",
-    icon: "🤝",
+    icon: PiHandHeartDuotone,
   },
   {
     title: "Trusted Locally",
     description: "Proudly serving families in Azamgarh with honest, result-driven care.",
-    icon: "💚",
+    icon: PiHeartDuotone,
   },
 ];
 
@@ -101,8 +107,8 @@ export default function Home() {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {benefits.map((b) => (
               <div key={b.title} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-2xl">
-                  {b.icon}
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+                  <b.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-brand-900">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">{b.description}</p>

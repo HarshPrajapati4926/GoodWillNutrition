@@ -1,10 +1,13 @@
+import { PiStarDuotone } from "react-icons/pi";
 import type { Testimonial } from "@/lib/data";
 
 export default function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-brand-100 bg-brand-50/60 p-6">
-      <div className="flex text-accent-600" aria-hidden="true">
-        {"★★★★★"}
+      <div className="flex gap-0.5 text-accent-600" aria-hidden="true">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <PiStarDuotone key={i} className="h-5 w-5" />
+        ))}
       </div>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-700">
         “{testimonial.quote}”

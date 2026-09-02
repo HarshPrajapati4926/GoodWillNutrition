@@ -3,14 +3,17 @@ export const siteConfig = {
   shortName: "Good Will NWC",
   tagline: "अच्छी सेहत पायें, पूछिये कैसे",
   city: "Azamgarh",
-  phone: "+91 90000 00000",
-  phoneDisplay: "+91 90000 00000",
-  whatsapp: "919000000000",
+  phone: "+91 91964 14477",
+  phoneDisplay: "91964 14477",
+  altPhone: "+91 63068 78170",
+  altPhoneDisplay: "63068 78170",
+  whatsapp: "919196414477",
   email: "info@goodwillnutrition.in",
-  address: "Near City Centre, Azamgarh, Uttar Pradesh, India",
+  address: "हनुमान गढ़ी मन्दिर के पीछे, कोलपाण्डेय, आज़मगढ़, उत्तर प्रदेश",
+  hours: "7:00 AM – 8:30 AM",
   mapsEmbedUrl:
-    "https://www.google.com/maps?q=Azamgarh,Uttar+Pradesh&output=embed",
-  mapsLinkUrl: "https://maps.google.com/?q=Azamgarh,Uttar+Pradesh",
+    "https://www.google.com/maps?q=Hanuman+Garhi+Mandir+Kolpandey+Azamgarh&output=embed",
+  mapsLinkUrl: "https://maps.google.com/?q=Hanuman+Garhi+Mandir+Kolpandey+Azamgarh",
 };
 
 export type Service = {
