@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   PiCompassDuotone,
   PiGraduationCapDuotone,
@@ -42,41 +41,29 @@ export default function Home() {
 
       {/* About preview */}
       <section className="section">
-        <div className="container-app grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-4 -z-10 rounded-3xl bg-brand-50" />
-            <Image
-              src="/logo.png"
-              alt="Good Will Nutrition and Wellness Centre"
-              width={420}
-              height={420}
-              className="w-full rounded-2xl"
-            />
-          </div>
-          <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-accent-600">
-              About Us
-            </span>
-            <h2 className="mt-2 text-3xl font-bold text-brand-900 sm:text-4xl">
-              Genuine care, backed by science
-            </h2>
-            <p className="mt-4 leading-relaxed text-neutral-600">
-              At Good Will Nutrition and Wellness Centre, we believe good health should feel
-              achievable — not overwhelming. We combine evidence-based nutrition science with
-              a deep understanding of everyday Indian lifestyles to create plans that actually
-              work, and actually last.
-            </p>
-            <p className="mt-4 leading-relaxed text-neutral-600">
-              From weight management to lifestyle coaching, our team walks with you at every
-              step, so you never feel alone on your journey to better health.
-            </p>
-            <Link
-              href="/about"
-              className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
-            >
-              Learn more about us →
-            </Link>
-          </div>
+        <div className="container-app mx-auto max-w-2xl text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-accent-600">
+            About Us
+          </span>
+          <h2 className="mt-2 text-3xl font-bold text-brand-900 sm:text-4xl">
+            Genuine care, backed by science
+          </h2>
+          <p className="mt-4 leading-relaxed text-neutral-600">
+            At Good Will Nutrition and Wellness Centre, we believe good health should feel
+            achievable — not overwhelming. We combine evidence-based nutrition science with
+            a deep understanding of everyday Indian lifestyles to create plans that actually
+            work, and actually last.
+          </p>
+          <p className="mt-4 leading-relaxed text-neutral-600">
+            From weight management to lifestyle coaching, our team walks with you at every
+            step, so you never feel alone on your journey to better health.
+          </p>
+          <Link
+            href="/about"
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+          >
+            Learn more about us →
+          </Link>
         </div>
       </section>
 
