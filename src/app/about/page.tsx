@@ -54,13 +54,14 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container-app grid items-center gap-12 lg:grid-cols-2">
-          <Reveal>
+          <Reveal className="overflow-hidden rounded-3xl shadow-sm">
             <Image
-              src="/logo.png"
-              alt={siteConfig.name}
-              width={420}
-              height={420}
-              className="mx-auto w-full max-w-sm"
+              src="/Images/healthy-food-healthy-life.png"
+              alt="Healthy Food, Healthy Life — eat right, feel light, live bright"
+              width={1254}
+              height={1254}
+              className="w-full"
+              sizes="(min-width: 1024px) 500px, 100vw"
             />
           </Reveal>
           <Reveal delay={0.1} className="space-y-8">
