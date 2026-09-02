@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/data";
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-linear-to-b from-brand-50 to-white">
-      <div className="container-app grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
+      <div className="container-app grid items-center gap-10 py-8 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div>
           <span className="inline-flex items-center rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold text-brand-800">
             Nutrition &amp; Wellness Centre in {siteConfig.city}
